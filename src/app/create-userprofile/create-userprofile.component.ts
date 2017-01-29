@@ -19,7 +19,7 @@ export class CreateUserprofileComponent implements OnInit {
   }
 
   saveProfile(form) {
-   this.usersService.createNewUser(form.value)
+   this.usersService.createNewUser(form.value, this.email)
       .subscribe( //returns observable which we subscribe to.
         () => {
           alert('user saved');

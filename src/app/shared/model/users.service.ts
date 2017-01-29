@@ -14,9 +14,9 @@ export class UsersService {
   }
 
 
-  createNewUser(userData:any):Observable<any> {
+  createNewUser(userData:any, emailInput:string):Observable<any> {
     // prepare data we want to save. create new object passing lesson data and courseId
-    const userToSave = Object.assign({}, userData);
+    const userToSave = Object.assign({}, userData, { email: emailInput});
     console.log(userToSave);
     // create new id of lesson by saying:
     // hey sdk create a child in the lessons table
