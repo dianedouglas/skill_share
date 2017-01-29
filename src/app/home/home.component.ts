@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { SkillsService } from '../shared/model/skills.service';
+import { Skill } from '../shared/model/skill';
+import { Observable } from 'rxjs/Rx';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  skillsProperty: Skill[];
+
+  constructor(private skillsService: SkillsService) { }
 
   ngOnInit() {
+    this.skillsService.findAllSkills()
+      .do(console.log)
+      .subscribe(
+        skillsFromDB => this.skillsProperty = skillsFromDB
+      )
   }
 
 }

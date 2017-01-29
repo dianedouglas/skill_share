@@ -8,7 +8,8 @@ import { AngularFireModule } from "angularfire2/index";
 import {SkillsService} from "./shared/model/skills.service";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 @NgModule({
   declarations: [
     AppComponent,
