@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
       .subscribe(
         skillsFromDB => this.skillsProperty = skillsFromDB
       );
-    this.userEmail = this.auth.userEmail;
+  this.userEmail = this.auth.userEmail;
     console.log('testhome', this.userEmail);
   }
 

@@ -9,19 +9,7 @@
             routerLink="home"
             [routerLinkActiveOptions]="{exact:true}"
         >Home</a>
-      </li>
-      <li>
-         <a routerLinkActive="active"
-            routerLink="login"
-            *ngIf="!authInfo?.isLoggedIn()"
-        >Login</a>      
-      </li>
-      <li>
-         <a routerLinkActive="active"
-            routerLink="register"
-            *ngIf="!authInfo?.isLoggedIn()"
-        >Register</a>  
-      </li>
+      </li>  
       <li>
         <a (click)="logout()" *ngIf="authInfo?.isLoggedIn()">Logout</a>
       </li>
