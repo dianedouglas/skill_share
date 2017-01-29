@@ -1,7 +1,8 @@
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { User} from './user';
-import { AngularFire, FirebaseRef } from 'angularfire2';
+import { Skill} from './skill';
+import { AngularFire, FirebaseRef,AngularFireDatabase } from 'angularfire2';
 import { Subject } from "rxjs/Rx";
 
 @Injectable()
@@ -9,7 +10,7 @@ export class UsersService {
 
   sdkDb: any;
 
-  constructor(private af: AngularFire, @Inject(FirebaseRef) fb) {
+  constructor(private af: AngularFire, @Inject(FirebaseRef) fb, private db: AngularFireDatabase) {
     this.sdkDb = fb.database().ref();
   }
 
@@ -22,9 +23,41 @@ export class UsersService {
     });
   }
 
+  findUserByEmailNew(email: string): Observable<User> {
+    return this.db.list('users', {
+      query: {
+        orderByChild: 'email',
+        equalTo: email
+        // email is passed in here from our 'id' parameter in course-detail.
+      }
+    }).map(results => results[0]);
+  }
+
+  findSkillsForUser(email: string){
+    console.log(email);
+    // get course observable we have navigated to by url.
+    const user$ = this.findUserByEmailNew(email);
+
+    // go to the lessonsPerCourse table(node)
+    // inside of there, find the user table by $key output lessons.
+    // get back gross firebase object observable array.
+    const skillsPerUser$ = user$
+      .switchMap(user => this.db.list('skillsPerUser/' + user.$key))
+      .do(console.log);
+
+      // talking to the reference we got back from lessonsPerCourse above
+      // for each firebaseObjectObservable in that array we call db.object to get back the observable for the lesson from the lessons table
+      // this is at the address lessons/lessonkey
+      // THEN we call flatmap on that and somehow that gives us an array of useable lesson objects.
+    return skillsPerUser$
+      .map(skillsPerUserParameter => skillsPerUserParameter.map(skill => this.db.object('skills/' + skill.$key)) )
+      .flatMap(fbojs => Observable.combineLatest(fbojs) )
+      .do(console.log);
+  }
+
 
   createNewUser(userData:any, emailInput:string):Observable<any> {
-    // prepare data we want to save. create new object passing lesson data and courseId
+    // prepare data we want to save. create new object passing lesson data and userId
     const userToSave = Object.assign({}, userData, { email: emailInput});
     console.log(userToSave);
     // create new id of lesson by saying:
