@@ -17,4 +17,8 @@ export class CreateUserprofileComponent implements OnInit {
     console.log('test', this.email);
   }
 
+  saveProfile(){
+    
+  }
+
 }

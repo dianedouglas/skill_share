@@ -1,0 +1,20 @@
+<form [formGroup]="form" autocomplete="off" novalidate>
+  <fieldset>
+    <legend>Create user profile</legend>
+    <div class="form-field">
+      <label>Username</label>
+      <input name="username" formControlName="username">
+      <div class="field-error-message">Field is mandatory</div>
+    </div>
+    <div class="form-field">
+      <label>Photo</label>
+      <input name="photo" formControlName="photo">
+      <div class="field-error-message">Field is mandatory</div>
+    </div>
+    <div class="form-field">
+      <label>Occupation</label>
+      <input name="occupation" formControlName="occupation">
+      <div class="field-error-message">Field is mandatory</div>
+    </div>
+  </fieldset>
+</form>

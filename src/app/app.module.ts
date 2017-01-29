@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthService } from './shared/security/auth.service';
 import { authConfig } from '../environments/firebase.config';
 import { CreateUserprofileComponent } from './create-userprofile/create-userprofile.component';
+import { UserprofileFormComponent } from './userprofile-form/userprofile-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CreateUserprofileComponent } from './create-userprofile/create-userprof
     TopMenuComponent,
     LoginComponent,
     RegisterComponent,
-    CreateUserprofileComponent
+    CreateUserprofileComponent,
+    UserprofileFormComponent
   ],
   imports: [
     BrowserModule,
