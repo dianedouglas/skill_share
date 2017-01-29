@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './shared/security/auth.service';
 import { authConfig } from '../environments/firebase.config';
+import { CreateUserprofileComponent } from './create-userprofile/create-userprofile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { authConfig } from '../environments/firebase.config';
     SkillsListComponent,
     TopMenuComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreateUserprofileComponent
   ],
   imports: [
     BrowserModule,

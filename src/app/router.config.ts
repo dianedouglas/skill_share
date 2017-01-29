@@ -2,6 +2,7 @@ import {Route} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import {CreateUserprofileComponent} from './create-userprofile/create-userprofile.component';
 
 export const routerConfig: Route[] = [
   {
@@ -15,6 +16,10 @@ export const routerConfig: Route[] = [
   {
     path: 'register',
     component: RegisterComponent
+  },  
+  {
+    path: 'new-profile',
+    component: CreateUserprofileComponent
   },  
   {
     path: '',
