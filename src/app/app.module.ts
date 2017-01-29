@@ -10,10 +10,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
+import { SkillsListComponent } from './skills-list/skills-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SkillsListComponent
   ],
   imports: [
     BrowserModule,
