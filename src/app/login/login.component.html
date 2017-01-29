@@ -1,3 +1,17 @@
-<p>
-  login works!
-</p>
+<p class="child-page-title"><b>New to SkillSwap?</b><br>Sign up</p>
+
+<form novalidate [formGroup]="form">
+  <div class="row">
+    <div class="col-xs-12">
+        <div id="user_creds" class="form-group">
+         <input name="email" formControlName="email" type="email" class="form-control" aria-describedby="emailHelp">
+         <input name="password" formControlName="password" type="password" class="form-control">
+       </div>
+     </div>
+   </div>
+
+  <div class="button-container">
+    <button class="btn btn-lg new-account" (click)="login()">Login</button>
+  </div>
+
+</form>
