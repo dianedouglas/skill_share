@@ -15,5 +15,10 @@ export class AppComponent {
     users$.subscribe(
       val => console.log(val)
     );
+
+    const user$: FirebaseObjectObservable<any> = af.database.object('users/user0');
+    user$.subscribe(
+      val => console.log(val)
+    )
   }
 }
