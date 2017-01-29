@@ -17,22 +17,5 @@
 </head>
 <body>
   <app-root>Loading...</app-root>
-
-  <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDhyRz5WogFqRN9wBYLLIVhFUIOuNeebts",
-      authDomain: "skill-share-angular2-19e00.firebaseapp.com",
-      databaseURL: "https://skill-share-angular2-19e00.firebaseio.com",
-      storageBucket: "skill-share-angular2-19e00.appspot.com",
-      messagingSenderId: "729612898539"
-    };
-    firebase.initializeApp(config);
-    var root = firebase.database().ref();
-    root.on('value', function(snap){
-      console.log(snap.val());
-    })
-  </script>
 </body>
 </html>
