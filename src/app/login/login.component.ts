@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.form.value.email, this.form.value.password)
       .subscribe( //navigate home on successful login, if error, call alert.
         ()=>{
-          this.router.navigate(['/home']);
+          this.router.navigate(['/user-profile']);
         },
         ()=>{
           alert('there was an error');

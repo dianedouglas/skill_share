@@ -13,6 +13,33 @@ export class UsersService {
     this.sdkDb = fb.database().ref();
   }
 
+  findUserByEmail(email: string) {
+    console.log(email);
+    // this.af.database.list('users', {
+    //   query: {
+    //     orderByChild: 'email',
+    //     equalTo: email 
+    //   }
+    // }).subscribe(
+    //   val => {
+    //     console.log(val);
+    //     debugger;
+    //   }
+    // )
+    return this.af.database.list('users', {
+      query: {
+        orderByChild: 'email',
+        equalTo: email 
+      }
+    })
+    // return this.af.database.list('/users', {
+    //   query: {
+    //     orderByChild: 'email',
+    //     equalTo: email
+    //   }
+    // }).map(results => results[0]); // get the first one that matches.
+  }
+
 
   createNewUser(userData:any, emailInput:string):Observable<any> {
     // prepare data we want to save. create new object passing lesson data and courseId

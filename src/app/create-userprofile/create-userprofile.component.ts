@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../shared/security/auth.service";
 import { UsersService } from "../shared/model/users.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-userprofile',
@@ -9,7 +10,7 @@ import { UsersService } from "../shared/model/users.service";
 })
 export class CreateUserprofileComponent implements OnInit {
 
-  constructor(private auth: AuthService, private usersService: UsersService) { }
+  constructor(private auth: AuthService, private usersService: UsersService, private router: Router) { }
 
   private email: string;
 
@@ -24,6 +25,7 @@ export class CreateUserprofileComponent implements OnInit {
         () => {
           alert('user saved');
           form.reset();
+          this.router.navigateByUrl('user-profile');
         },
         err => {
           alert('error:' + err);
