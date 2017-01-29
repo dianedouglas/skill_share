@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { firebaseConfig } from "../environments/firebase.config";
 import { AngularFireModule } from "angularfire2/index";
-
-import {SkillsService} from "./shared/model/skills.service";
+import { SkillsService } from "./shared/model/skills.service";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import { SkillsListComponent } from './skills-list/skills-list.component';
+import { RouterModule } from '@angular/router';
+import { routerConfig } from './router.config';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { SkillsListComponent } from './skills-list/skills-list.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    RouterModule.forRoot(routerConfig)
   ],
   providers: [SkillsService],
   bootstrap: [AppComponent]
