@@ -20,4 +20,10 @@ export class UserprofileFormComponent implements OnInit {
     });
   }
 
+  isErrorVisible(field: string, error:string) {
+    return this.form.controls[field].dirty //has been touched
+      && this.form.controls[field].errors //if form is associated with the field
+      && this.form.controls[field].errors[error]; //if the error includes the given error.
+  }
+
 }
