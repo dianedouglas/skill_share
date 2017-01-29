@@ -18,6 +18,7 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './shared/security/auth.service';
+import { authConfig } from '../environments/firebase.config';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { AuthService } from './shared/security/auth.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig, authConfig),
     RouterModule.forRoot(routerConfig)
   ],
   providers: [SkillsService, AuthService],
