@@ -6,13 +6,14 @@
 
    <a routerLinkActive="active"
       routerLink="login"
+      *ngIf="!authInfo?.isLoggedIn()"
   >Login</a>
 
    <a routerLinkActive="active"
       routerLink="register"
+      *ngIf="!authInfo?.isLoggedIn()"
   >Register</a>  
 
-   <a routerLinkActive="active"
-      routerLink="logout"
-  >Logout</a>
+
+  <a (click)="logout()" *ngIf="authInfo?.isLoggedIn()">Logout</a>
 </header>

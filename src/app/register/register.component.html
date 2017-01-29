@@ -1,3 +1,20 @@
-<p>
-  register works!
-</p>
+<form novalidate [formGroup]="form">
+
+  <fieldset>
+    <legend>Register</legend>
+    <div class="form-field">
+      <label>Email:</label>
+      <input name="email" formControlName="email">
+    </div>
+     <div class="form-field">
+      <label>Password:</label>
+      <input name="password" formControlName="password" type="password">
+    </div>
+     <div class="form-field">
+      <label>Confirm Password:</label>
+      <input name="confirm" formControlName="confirm" type="password">
+    </div>
+  </fieldset>
+  <!-- disable register button if passwords do not match -->
+  <button (click)="register()" [disabled]="!isPasswordMatch()">Register</button>
+</form>
