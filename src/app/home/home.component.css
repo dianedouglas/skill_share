@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'brand';
+  src: url('./assets/fonts/Destrukt.ttf')
+}
+
+#main-page-brand {
+  font-size: 50px;
+  font-family: 'brand', sans-serif;
+  color: #f7f5f4;;
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: #4EC5C1;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    width: 740px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#phrase {
+  text-align: center;
+  font-size: 1.5em;
+  color: #f7f5f4;
+}
+
+#home-page-btn-row {
+  margin-top: 25px;
+}
+
+.btn.user {
+  width: 80%;
+  height: 50px;
+  margin-right: 10%;
+  margin-left: 10%;
+  color: #000;
+  font-size: 1.2em;
+  background-color: #DBF3F2;
+  border-color: #FFFFFF;
+}
+
+.row.skills-row {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .row.skills-row  {
+    width: 740px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

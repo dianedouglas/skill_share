@@ -1,19 +1,30 @@
-<header>
-  <a  routerLinkActive="active"
-      routerLink="home"
-      [routerLinkActiveOptions]="{exact:true}"
-  >Home</a>
-
-   <a routerLinkActive="active"
-      routerLink="login"
-      *ngIf="!authInfo?.isLoggedIn()"
-  >Login</a>
-
-   <a routerLinkActive="active"
-      routerLink="register"
-      *ngIf="!authInfo?.isLoggedIn()"
-  >Register</a>  
-
-
-  <a (click)="logout()" *ngIf="authInfo?.isLoggedIn()">Logout</a>
-</header>
+<nav class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <a routerLink=""><div id="brand" class="navbar-brand">SS</div></a>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li>
+        <a  routerLinkActive="active"
+            routerLink="home"
+            [routerLinkActiveOptions]="{exact:true}"
+        >Home</a>
+      </li>
+      <li>
+         <a routerLinkActive="active"
+            routerLink="login"
+            *ngIf="!authInfo?.isLoggedIn()"
+        >Login</a>      
+      </li>
+      <li>
+         <a routerLinkActive="active"
+            routerLink="register"
+            *ngIf="!authInfo?.isLoggedIn()"
+        >Register</a>  
+      </li>
+      <li>
+        <a (click)="logout()" *ngIf="authInfo?.isLoggedIn()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
