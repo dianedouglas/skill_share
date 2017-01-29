@@ -1,0 +1,19 @@
+<form [formGroup]="form" autocomplete="off" novalidate>
+  <fieldset>
+    <legend>Create user profile</legend>
+    <div class="form-field">
+      <label>Skill name</label>
+      <input name="skill_name" formControlName="skill_name">
+      <div class="field-error-message" *ngIf="isErrorVisible('skill_name', 'required')">Field is required</div>
+    </div>
+    <div class="form-field">
+      <label>Description</label>
+      <input name="description" formControlName="description">
+      <div class="field-error-message" *ngIf="isErrorVisible('description', 'required')">Field is required</div>
+    </div>
+  </fieldset>
+</form>
+
+
+<!-- 
+Potentailly add city, and either expertise level, and/or teach vs learn -->

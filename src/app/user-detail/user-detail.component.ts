@@ -19,8 +19,8 @@ export class UserDetailComponent implements OnInit {
     this.email = this.auth.userEmail;
     this.usersService.findUserByEmail(this.email).subscribe(
       val => {
+        console.log(val);
         this.currentUser = val[0];
-        console.log(this.currentUser);
       }
     );
   }

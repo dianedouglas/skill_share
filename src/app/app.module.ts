@@ -23,6 +23,8 @@ import { authConfig } from '../environments/firebase.config';
 import { CreateUserprofileComponent } from './create-userprofile/create-userprofile.component';
 import { UserprofileFormComponent } from './userprofile-form/userprofile-form.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { SkillFormComponent } from './skill-form/skill-form.component';
+import { CreateSkillComponent } from './create-skill/create-skill.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     RegisterComponent,
     CreateUserprofileComponent,
     UserprofileFormComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    SkillFormComponent,
+    CreateSkillComponent
   ],
   imports: [
     BrowserModule,

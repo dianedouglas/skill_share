@@ -4,7 +4,7 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {CreateUserprofileComponent} from './create-userprofile/create-userprofile.component';
 import {UserDetailComponent} from './user-detail/user-detail.component';
-
+import {CreateSkillComponent} from './create-skill/create-skill.component';
 
 export const routerConfig: Route[] = [
   {
@@ -26,6 +26,11 @@ export const routerConfig: Route[] = [
   {
     path: 'user-profile',
     component: UserDetailComponent
+  },
+
+  {
+    path: 'add-skill',
+    component: CreateSkillComponent
   },
 
   {

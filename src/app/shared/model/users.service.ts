@@ -14,30 +14,12 @@ export class UsersService {
   }
 
   findUserByEmail(email: string) {
-    console.log(email);
-    // this.af.database.list('users', {
-    //   query: {
-    //     orderByChild: 'email',
-    //     equalTo: email 
-    //   }
-    // }).subscribe(
-    //   val => {
-    //     console.log(val);
-    //     debugger;
-    //   }
-    // )
     return this.af.database.list('users', {
       query: {
         orderByChild: 'email',
-        equalTo: email 
+        equalTo: email
       }
-    })
-    // return this.af.database.list('/users', {
-    //   query: {
-    //     orderByChild: 'email',
-    //     equalTo: email
-    //   }
-    // }).map(results => results[0]); // get the first one that matches.
+    });
   }
 
 

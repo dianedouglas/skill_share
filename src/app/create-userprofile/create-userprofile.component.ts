@@ -15,6 +15,7 @@ export class CreateUserprofileComponent implements OnInit {
   private email: string;
 
   ngOnInit() {
+    
     this.email = this.auth.userEmail;
     console.log('test', this.email);
   }
