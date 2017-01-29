@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { firebaseConfig } from "../environments/firebase.config";
 import { AngularFireModule } from "angularfire2/index";
 import { SkillsService } from "./shared/model/skills.service";
+import { UsersService } from "./shared/model/users.service";
 import { Skill } from "./shared/model/skill";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -41,7 +42,7 @@ import { UserprofileFormComponent } from './userprofile-form/userprofile-form.co
     AngularFireModule.initializeApp(firebaseConfig, authConfig),
     RouterModule.forRoot(routerConfig)
   ],
-  providers: [SkillsService, AuthService],
+  providers: [UsersService, SkillsService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

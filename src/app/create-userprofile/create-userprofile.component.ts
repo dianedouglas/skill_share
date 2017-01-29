@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../shared/security/auth.service";
+import { UsersService } from "../shared/model/users.service";
 
 @Component({
   selector: 'app-create-userprofile',
@@ -8,7 +9,7 @@ import { AuthService } from "../shared/security/auth.service";
 })
 export class CreateUserprofileComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private usersService: UsersService) { }
 
   private email: string;
 
@@ -17,8 +18,17 @@ export class CreateUserprofileComponent implements OnInit {
     console.log('test', this.email);
   }
 
-  saveProfile(){
-    
+  saveProfile(form) {
+   this.usersService.createNewUser(form.value)
+      .subscribe( //returns observable which we subscribe to.
+        () => {
+          alert('user saved');
+          form.reset();
+        },
+        err => {
+          alert('error:' + err);
+        }
+      );
   }
 
 }

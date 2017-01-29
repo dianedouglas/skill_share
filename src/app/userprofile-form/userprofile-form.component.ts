@@ -26,4 +26,18 @@ export class UserprofileFormComponent implements OnInit {
       && this.form.controls[field].errors[error]; //if the error includes the given error.
   }
 
+  // We need this to get the values from the form
+  get value() {
+    return this.form.value;
+  }
+
+  get valid() {
+    return this.form.valid;
+  }
+
+  reset() {
+    this.form.reset();
+  }
+
+
 }
