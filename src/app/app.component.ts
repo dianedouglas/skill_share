@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { initializeApp, database} from 'firebase';
+import { firebaseConfig } from "../environments/firebase.config";
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from "angularfire2";
 
 @Component({
   selector: 'app-root',
@@ -8,19 +10,10 @@ import { initializeApp, database} from 'firebase';
 })
 export class AppComponent {
   title = 'app works!';
-  constructor(){
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDhyRz5WogFqRN9wBYLLIVhFUIOuNeebts",
-      authDomain: "skill-share-angular2-19e00.firebaseapp.com",
-      databaseURL: "https://skill-share-angular2-19e00.firebaseio.com",
-      storageBucket: "skill-share-angular2-19e00.appspot.com",
-      messagingSenderId: "729612898539"
-    };
-    initializeApp(config);
-    var root = database().ref();
-    root.on('value', function(snap){
-      console.log(snap.val());
-    })
+  constructor(private af: AngularFire){
+    const users$: FirebaseListObservable<any> = af.database.list('users');
+    users$.subscribe(
+      val => console.log(val)
+    );
   }
 }
