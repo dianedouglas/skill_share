@@ -12,12 +12,18 @@ import 'rxjs/add/operator/do';
 import { SkillsListComponent } from './skills-list/skills-list.component';
 import { RouterModule } from '@angular/router';
 import { routerConfig } from './router.config';
+import { TopMenuComponent } from './top-menu/top-menu.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SkillsListComponent
+    SkillsListComponent,
+    TopMenuComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
