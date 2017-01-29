@@ -8,6 +8,8 @@ export class SkillsService {
 
   constructor(private af: AngularFire) { }
   findAllSkills(): Observable<Skill[]> {
-    return this.af.database.list('skills');
+    return this.af.database.list('skills')
+      .do(console.log)
+      .map(skillsAsJson => Skill.fromJsonList(skillsAsJson));
   }
 }
