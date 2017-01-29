@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillsService } from '../shared/model/skills.service';
 import { Skill } from '../shared/model/skill';
-import { Observable } from 'rxjs/Rx';
 
 
 @Component({
