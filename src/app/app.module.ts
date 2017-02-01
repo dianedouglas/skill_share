@@ -25,6 +25,8 @@ import { UserprofileFormComponent } from './userprofile-form/userprofile-form.co
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { SkillFormComponent } from './skill-form/skill-form.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { CommunitySearchComponent } from './community-search/community-search.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { CreateSkillComponent } from './create-skill/create-skill.component';
     UserprofileFormComponent,
     UserDetailComponent,
     SkillFormComponent,
-    CreateSkillComponent
+    CreateSkillComponent,
+    UsersListComponent,
+    CommunitySearchComponent
   ],
   imports: [
     BrowserModule,

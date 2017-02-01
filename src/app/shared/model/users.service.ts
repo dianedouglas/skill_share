@@ -4,6 +4,7 @@ import { User} from './user';
 import { Skill} from './skill';
 import { AngularFire, FirebaseRef,AngularFireDatabase } from 'angularfire2';
 import { Subject } from "rxjs/Rx";
+import {FirebaseListFactoryOpts} from "angularfire2/interfaces";
 
 @Injectable()
 export class UsersService {
@@ -12,6 +13,10 @@ export class UsersService {
 
   constructor(private af: AngularFire, @Inject(FirebaseRef) fb, private db: AngularFireDatabase) {
     this.sdkDb = fb.database().ref();
+  }
+
+  findAllUsers(): Observable<User[]> {
+    return this.db.list('users').map(User.fromJsonList);
   }
 
   findUserByEmail(email: string) {

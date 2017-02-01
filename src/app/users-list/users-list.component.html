@@ -1,0 +1,6 @@
+<ul *ngFor="let user of users">
+  <p *ngIf="user">Username: {{user?.username}}</p>
+  <p *ngIf="user">Occupation: {{user?.occupation}}</p>
+  <p *ngIf="user">Email: {{user?.email}}</p>
+  <img height="100" width="100" src="{{user.photo}}" alt="image-of-user">
+</ul>

@@ -11,6 +11,12 @@
         >Home</a>
       </li>  
       <li>
+        <a  routerLinkActive="active"
+            routerLink="community"
+            [routerLinkActiveOptions]="{exact:true}"
+        >Community</a>
+      </li>  
+      <li>
         <a (click)="logout()" *ngIf="authInfo?.isLoggedIn()">Logout</a>
       </li>
     </ul>
