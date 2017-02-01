@@ -21,7 +21,7 @@ export class CreateSkillComponent implements OnInit {
     this.usersService.findUserByEmail(this.email).subscribe(
       val => {
         console.log(val);
-        this.userId = val[0] ? 'anonymous' : val[0].$key;
+        this.userId = val[0] ? val[0].$key : 'anonymous';
       }
     );
 
