@@ -10,6 +10,7 @@ import { UsersService } from "../shared/model/users.service";
 export class CommunitySearchComponent implements OnInit {
 
   users: User[];
+  filteredUsers: User[];
 
   constructor(private usersService: UsersService) { }
 
@@ -19,8 +20,13 @@ export class CommunitySearchComponent implements OnInit {
     // service find all users in a specific area.
     this.usersService.findAllUsers()
       .subscribe(
-        users => this.users = users
-      )
+      users => this.users = this.filteredUsers = users
+    )
+  }
+
+  search(userInput) {
+    // uses search bar to filter by username. Could easily be reconfigured or copied to search by city.
+    this.filteredUsers = this.users.filter( currentUser => currentUser.username.includes(userInput));
   }
 
 }

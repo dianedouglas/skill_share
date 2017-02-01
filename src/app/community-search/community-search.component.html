@@ -1,1 +1,4 @@
-<users-list [users]=users></users-list>
+<input placeholder="Username" #typedInput>
+<button (click)=search(typedInput.value) >Search</button>
+
+<users-list [users]=filteredUsers></users-list>
