@@ -18,6 +18,18 @@ export class UsersService {
   findAllUsers(): Observable<User[]> {
     return this.db.list('users').map(User.fromJsonList);
   }
+  findAllUsersBySkill(skillInput) {
+    const skillsMatches$ = this.db.list('skills', {
+      query: {
+        orderByChild: 'skill_name',
+        equalTo: skillInput
+      }
+    });
+    return skillsMatches$
+    .map(skillsMatchesParam => skillsMatchesParam.map(skill => this.db.object('users/' + skill.userId)) )
+    .flatMap(fbojs => Observable.combineLatest(fbojs) )
+          .do(console.log);
+  }
 
   findUserByEmail(email: string) {
     return this.af.database.list('users', {

@@ -11,6 +11,7 @@ export class CommunitySearchComponent implements OnInit {
 
   users: User[];
   filteredUsers: User[];
+  userIds: string[];
 
   constructor(private usersService: UsersService) { }
 
@@ -24,9 +25,19 @@ export class CommunitySearchComponent implements OnInit {
     )
   }
 
-  search(userInput) {
-    // uses search bar to filter by username. Could easily be reconfigured or copied to search by city.
-    this.filteredUsers = this.users.filter( currentUser => currentUser.username.includes(userInput));
+  // searchByUsername(userInput) {
+  //   // uses search bar to filter by username. Could easily be reconfigured or copied to search by city.
+  //   this.filteredUsers = this.users.filter( currentUser => currentUser.username.includes(userInput));
+  // }
+
+  searchBySkill(userInput) {
+    this.userIds = [];
+    this.usersService.findAllUsersBySkill(userInput)
+      .subscribe(
+      users => {
+        this.filteredUsers = users;
+      }
+    );
   }
 
 }
