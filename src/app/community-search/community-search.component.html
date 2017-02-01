@@ -1,7 +1,5 @@
-<input placeholder="Username" #usernameInput>
-<button (click)=searchByUsername(usernameInput.value) >Search</button>
+<input (keyup)=searchByUsername(usernameInput.value) placeholder="Username" #usernameInput>
 
-<input placeholder="Skill Name" #skillInput>
-<button (click)=searchBySkill(skillInput.value) >Search</button>
+<input (keyup)=searchBySkill(skillInput.value) placeholder="Skill Name" #skillInput>
 
 <users-list [users]=filteredUsers></users-list>
