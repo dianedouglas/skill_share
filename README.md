@@ -2,7 +2,7 @@
 
 #### _A social networking app for users to share and learn skills together. Built with Angular 2 and Firebase database._
 
-![screenshot of project main page](src/assets/img/web-app.png)
+![screenshot of project main page](./src/assets/img/web-app.png)
 
 ## Description
 
