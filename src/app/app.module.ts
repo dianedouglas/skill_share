@@ -27,6 +27,7 @@ import { SkillFormComponent } from './skill-form/skill-form.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { CommunitySearchComponent } from './community-search/community-search.component';
+import {AuthGuard} from "./shared/security/auth.guard";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { CommunitySearchComponent } from './community-search/community-search.co
     AngularFireModule.initializeApp(firebaseConfig, authConfig),
     RouterModule.forRoot(routerConfig)
   ],
-  providers: [UsersService, SkillsService, AuthService],
+  providers: [UsersService, SkillsService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
