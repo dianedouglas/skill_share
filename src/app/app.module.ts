@@ -28,6 +28,7 @@ import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { CommunitySearchComponent } from './community-search/community-search.component';
 import {AuthGuard} from "./shared/security/auth.guard";
+import { EditUserprofileComponent } from './edit-userprofile/edit-userprofile.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {AuthGuard} from "./shared/security/auth.guard";
     SkillFormComponent,
     CreateSkillComponent,
     UsersListComponent,
-    CommunitySearchComponent
+    CommunitySearchComponent,
+    EditUserprofileComponent
   ],
   imports: [
     BrowserModule,

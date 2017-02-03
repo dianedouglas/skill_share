@@ -7,6 +7,7 @@ import {UserDetailComponent} from './user-detail/user-detail.component';
 import {CreateSkillComponent} from './create-skill/create-skill.component';
 import {CommunitySearchComponent} from './community-search/community-search.component';
 import {AuthGuard} from'./shared/security/auth.guard';
+import {EditUserprofileComponent} from'./edit-userprofile/edit-userprofile.component';
 
 export const routerConfig: Route[] = [
   {
@@ -32,7 +33,17 @@ export const routerConfig: Route[] = [
   },  
   {
     path: 'user-profile',
-    component: UserDetailComponent
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: UserDetailComponent
+      },
+      {
+        path: 'edit',
+        component: EditUserprofileComponent
+      }
+    ]
   },
 
   {
