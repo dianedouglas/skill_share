@@ -29,6 +29,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { CommunitySearchComponent } from './community-search/community-search.component';
 import {AuthGuard} from "./shared/security/auth.guard";
 import { EditUserprofileComponent } from './edit-userprofile/edit-userprofile.component';
+import { UserResolver } from './shared/model/user.resolver';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { EditUserprofileComponent } from './edit-userprofile/edit-userprofile.co
     AngularFireModule.initializeApp(firebaseConfig, authConfig),
     RouterModule.forRoot(routerConfig)
   ],
-  providers: [UsersService, SkillsService, AuthService, AuthGuard],
+  providers: [UsersService, SkillsService, AuthService, AuthGuard, UserResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

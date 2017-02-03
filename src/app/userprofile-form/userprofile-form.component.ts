@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./userprofile-form.component.css']
 })
 export class UserprofileFormComponent implements OnInit {
+
+  @Input()
+  initialValue: any;
 
   form: FormGroup;
 

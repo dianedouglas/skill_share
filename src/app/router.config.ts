@@ -8,6 +8,7 @@ import {CreateSkillComponent} from './create-skill/create-skill.component';
 import {CommunitySearchComponent} from './community-search/community-search.component';
 import {AuthGuard} from'./shared/security/auth.guard';
 import {EditUserprofileComponent} from'./edit-userprofile/edit-userprofile.component';
+import { UserResolver } from './shared/model/user.resolver';
 
 export const routerConfig: Route[] = [
   {
@@ -41,7 +42,10 @@ export const routerConfig: Route[] = [
       },
       {
         path: 'edit',
-        component: EditUserprofileComponent
+        component: EditUserprofileComponent,
+        resolve: {
+          user: UserResolver
+        }
       }
     ]
   },
