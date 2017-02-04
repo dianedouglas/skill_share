@@ -14,6 +14,6 @@ export class UserResolver implements Resolve<User>{
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):Observable<any>{
-    return this.usersService.findUserByEmail(this.authService.userEmail).first();
+    return this.usersService.findUserByEmailNew(this.authService.userEmail).first();
   }
 }
