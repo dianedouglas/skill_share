@@ -1,4 +1,12 @@
-<p class="child-page-title"><b>New to SkillSwap?</b><br>Sign up</p>
+<section class="top">
+  <p class="child-page-title"><b>User Login</b></p>
+  <p>Don't have an account?
+    <a routerLinkActive="active"
+       routerLink="/register"
+       *ngIf="!authInfo?.isLoggedIn()"
+   >Sign Up</a>
+  </p>
+<section>
 
 <form novalidate [formGroup]="form">
   <div class="row">

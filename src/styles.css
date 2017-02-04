@@ -11,6 +11,11 @@ body {
   src: url('./assets/fonts/Destrukt.ttf')
 }
 
+section.top {
+  margin-top: 25px;
+  text-align: center;
+}
+
 /*.child-page-title {
   font-size: 2em;
   text-align: center;
