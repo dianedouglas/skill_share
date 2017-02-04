@@ -1,2 +1,2 @@
-<skill-form [initialValue]="currentSkill"></skill-form>
-<button>Save Changes</button>
+<skill-form [initialValue]="currentSkill" #form></skill-form>
+<button (click)="save(form.value)">Save Changes</button>

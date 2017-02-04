@@ -11,7 +11,7 @@ export class EditSkillComponent implements OnInit {
 
   currentSkill;
 
-  constructor(private route:ActivatedRoute, private skillsService: SkillsService) { }
+  constructor(private route: ActivatedRoute, private skillsService: SkillsService, private router: Router) { }
 
   ngOnInit() {
     var skill$ = this.route.params.subscribe(params => {
@@ -23,6 +23,21 @@ export class EditSkillComponent implements OnInit {
           }
         );
     });
+  }
+
+  save(skillData) {
+
+  // sends skill key and data from form to service
+    skillData['userId'] = this.currentSkill.userId;
+    this.skillsService.saveEditedSkill(this.currentSkill.$key, skillData)
+      .subscribe(
+        () => {
+          this.router.navigate(['/user-profile']);
+        },
+        err => {
+          alert('error saving user: ' + err);
+        }
+      )
   }
 
 }
