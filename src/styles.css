@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* ------------------------------ Body Styles ------------------------------- */
+
+body {
+  background-color: #f7f5f4;
+}
+
+@font-face {
+  font-family: 'brand';
+  src: url('./assets/fonts/Destrukt.ttf')
+}
+
+/*.child-page-title {
+  font-size: 2em;
+  text-align: center;
+}
+
+.user-row {
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.user {
+  margin: 10px;
+  width: 300px;
+  height: 300px;
+}
+
+.user-summary {
+  background-color: #000;
+}
+
+.image-wrap {
+  overflow: hidden;
+  width: 100%;
+  height: 230px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-content {
+  padding: 5px;
+  text-align: center;
+}
+
+.user-content  a {
+  text-decoration: none;
+  font-size: 1.25em;
+  color: #4EC5C1;
+}
+
+
+.occupation {
+  font-size: 1.0em;
+  font-variant: small-caps;
+  line-height: 90%;
+  color: #FFF;
+}
+
+.glyphicon {
+  font-size: 16px;
+  padding: 4px;
+  color: #4EC5C1;
+}*/
