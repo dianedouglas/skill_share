@@ -55,7 +55,7 @@ export class UsersService {
     // get course observable we have navigated to by url.
     const user$ = this.findUserByEmailNew(email);
 
-    // go to the lessonsPerCourse table(node)
+    // go to the usersPerCourse table(node)
     // inside of there, find the user table by $key output lessons.
     // get back gross firebase object observable array.
     const skillsPerUser$ = user$
@@ -94,6 +94,20 @@ export class UsersService {
     return this.firebaseUpdate(dataToSave);
 
   }
+
+
+  saveEditedUser(userId, user):Observable<any>{
+    // put the user data into a blank object
+    const userToSave = Object.assign({}, user);
+    //we don't want the key to be inside of the userToSave object because it's part of the url.
+    delete(userToSave.$key); 
+    let dataToSave = {};
+    // then we save the user data inside of an object with key at users/userId
+    dataToSave['users/' + userId] = userToSave;
+    // this time we don't need to update the usersPerCourse because the association is already there.
+    return this.firebaseUpdate(dataToSave);
+  }
+
 
   firebaseUpdate(dataToSave) {
     // create rxjs subject so that we can convert it to an observable to return. we want to stay consistent and use observables rather than promises or callbacks.

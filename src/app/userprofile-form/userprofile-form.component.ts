@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -6,19 +6,32 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   templateUrl: './userprofile-form.component.html',
   styleUrls: ['./userprofile-form.component.css']
 })
-export class UserprofileFormComponent implements OnInit {
+export class UserprofileFormComponent implements OnInit, OnChanges {
+
+  @Input()
+  initialValue: any;
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { 
 
-  ngOnInit() {
     this.form = this.formBuilder.group({
       username: ['', Validators.required],
       photo: ['', Validators.required],
       occupation: ['', Validators.required],
       location: ['', Validators.required]
     });
+
+  }
+
+  ngOnInit(){}
+
+  ngOnChanges(changes:SimpleChanges) {
+    //make sure form is initialized and look for changes to initialValue input property
+    if(this.form && changes['initialValue']) {
+      this.form.patchValue(changes['initialValue'].currentValue)
+    }
+
   }
 
   isErrorVisible(field: string, error:string) {
