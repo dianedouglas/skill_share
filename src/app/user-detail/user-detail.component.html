@@ -1,6 +1,7 @@
 <p>Username: {{currentUser?.username}}</p>
 <p>Occupation: {{currentUser?.occupation}}</p>
 <p>Email: {{currentUser?.email}}</p>
+<p>Location: {{currentUser?.location}}</p>
 <skills-list [skills]="skills$ | async"></skills-list>
 <img src="{{currentUser?.photo}}" alt="image-of-user">
 <br>

@@ -16,7 +16,8 @@ export class UserprofileFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       username: ['', Validators.required],
       photo: ['', Validators.required],
-      occupation: ['', Validators.required]
+      occupation: ['', Validators.required],
+      location: ['', Validators.required]
     });
   }
 

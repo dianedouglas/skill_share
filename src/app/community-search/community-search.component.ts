@@ -10,34 +10,33 @@ import { UsersService } from "../shared/model/users.service";
 export class CommunitySearchComponent implements OnInit {
 
   users: User[];
-  filteredUsers: User[];
-  userNameSearch: string;
+  filteredUserLocation: User[];
+  userLocationSearch: string;
   userSkillSearch: string;
 
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
-    // rather than find all users, 
-    // you could instead make a different call here to 
+    // rather than find all users,
+    // you could instead make a different call here to
     // service find all users in a specific area.
     this.usersService.findAllUsers()
       .subscribe(
-      users => this.users = this.filteredUsers = users
+      users => this.users = this.filteredUserLocation = users
     )
   }
 
-  searchByUsername(userInput) {
-    // uses search bar to filter by username. Could easily be reconfigured or copied to search by city.
+  searchByLocation(userInput) {
     // after receiving a user name from search bar, store it and then filter the current group of users by it.
-    this.userNameSearch = userInput;
-    this.filterByUsername(this.filteredUsers);
+    this.userLocationSearch = userInput;
+    this.filterByLocation(this.filteredUserLocation);
   }
 
-  filterByUsername(currentUsers) {
+  filterByLocation(currentUsers) {
     // receive the current group of users, could be stored in either filtered or all and filter, then store back in filtered users.
-    if(this.userNameSearch) {    
-      const newlyFilteredUsers = currentUsers.filter( currentUser => currentUser.username.includes(this.userNameSearch));
-      this.filteredUsers = newlyFilteredUsers;
+    if(this.userLocationSearch) {
+      const newlyFilteredUserLocation = currentUsers.filter( currentUser => currentUser.location.includes(this.userLocationSearch));
+      this.filteredUserLocation = newlyFilteredUserLocation;
     } else {
       // if there's no search term, then just rerun filter by skill.
       this.filterBySkill();
@@ -50,22 +49,22 @@ export class CommunitySearchComponent implements OnInit {
   }
 
   filterBySkill() {
-    if (!this.userSkillSearch && !this.userNameSearch) {
-      this.filteredUsers = this.users;
+    if (!this.userSkillSearch && !this.userLocationSearch) {
+      this.filteredUserLocation = this.users;
     }
     else if(!this.userSkillSearch){
-      // if the username search exists but the skill search doesn't
-      //pass in all users to be filtered by name if there's no specified skill so you can reset and see all.
-      this.filterByUsername(this.users);
-    } else {    
-      // if there is a skill name, filter by it, then if there is a user name search in place, narrow results down.
+      // if the location search exists but the skill search doesn't
+      //pass in all users to be filtered by location if there's no specified skill so you can reset and see all.
+      this.filterByLocation(this.users);
+    } else {
+      // if there is a skill name, filter by it, then narrow results down by location
       this.usersService.findAllUsersBySkill(this.userSkillSearch)
         .subscribe(
         users => {
-          this.filteredUsers = users;
-          // after filtering by skillname, pass that group in to be filtered by username too if there is one in place.
-          if(this.userNameSearch) {
-            this.filterByUsername(this.filteredUsers);
+          this.filteredUserLocation = users;
+          // after filtering by skillname, pass that group in to be filtered by location too if there is one in place.
+          if(this.userLocationSearch) {
+            this.filterByLocation(this.filteredUserLocation);
           }
         }
       );
