@@ -1,2 +1,2 @@
-<userprofile-form [initialValue]="user"></userprofile-form>
-<button>Save Changes</button>
+<userprofile-form [initialValue]="user" #form></userprofile-form>
+<button (click)="save(form.value)">Save Changes</button>
