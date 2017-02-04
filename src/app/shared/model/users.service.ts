@@ -125,4 +125,9 @@ export class UsersService {
         );
     return subject.asObservable();
   }
+
+  findUserByKey(key){
+    return this.af.database.object('users/' + key);
+  }
+
 }
