@@ -16,7 +16,6 @@ export class EditSkillComponent implements OnInit {
   ngOnInit() {
     var skill$ = this.route.params.subscribe(params => {
       const skillKey = params['id'];
-      debugger;
       return this.skillsService.findSkillByKey(skillKey).subscribe(
         skill => {
             this.currentSkill = skill;

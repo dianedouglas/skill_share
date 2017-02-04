@@ -17,7 +17,6 @@ export class SkillsListComponent implements OnInit {
   }
 
   goToEdit(skillObject){
-    debugger;
     this.router.navigate(['edit-skill', skillObject.$key]);
   }
 
