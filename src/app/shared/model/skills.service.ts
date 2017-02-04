@@ -48,4 +48,7 @@ export class SkillsService {
         );
     return subject.asObservable();
   }
+  findSkillByKey(key){
+    return this.af.database.object('skills/' + key);
+  }
 }
