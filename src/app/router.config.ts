@@ -9,6 +9,7 @@ import {CommunitySearchComponent} from './community-search/community-search.comp
 import {AuthGuard} from'./shared/security/auth.guard';
 import {EditUserprofileComponent} from'./edit-userprofile/edit-userprofile.component';
 import { UserResolver } from './shared/model/user.resolver';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 export const routerConfig: Route[] = [
   {
@@ -49,7 +50,10 @@ export const routerConfig: Route[] = [
       }
     ]
   },
-
+  {
+    path: 'users/:id',
+    component: ViewUserComponent
+  },
   {
     path: 'add-skill',
     component: CreateSkillComponent,

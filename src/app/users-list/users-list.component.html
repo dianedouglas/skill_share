@@ -4,4 +4,5 @@
   <p *ngIf="user">Email: {{user?.email}}</p>
   <p *ngIf="user">Location: {{user?.location}}</p>
   <img height="100" width="100" src="{{user.photo}}" alt="image-of-user">
+  <button (click)=goToUserDetail(user)>Go to user</button>
 </ul>
