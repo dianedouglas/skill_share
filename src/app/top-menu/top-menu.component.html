@@ -9,20 +9,20 @@
             routerLink="home"
             [routerLinkActiveOptions]="{exact:true}"
         >Home</a>
-      </li>  
+      </li>
       <li>
         <a  routerLinkActive="active"
             routerLink="community"
             [routerLinkActiveOptions]="{exact:true}"
         >Community</a>
-      </li>  
+      </li>
       <li>
         <a  routerLinkActive="active"
             routerLink='/user-profile'
             [routerLinkActiveOptions]="{exact:true}"
             *ngIf="authInfo?.isLoggedIn()"
         >My Profile</a>
-      </li>  
+      </li>
       <li>
         <a (click)="logout()" *ngIf="authInfo?.isLoggedIn()">Logout</a>
       </li>
