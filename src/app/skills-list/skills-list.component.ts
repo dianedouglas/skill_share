@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Skill } from "../shared/model/skill";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'skills-list',
@@ -10,9 +11,13 @@ export class SkillsListComponent implements OnInit {
   @Input()
   skills: Skill[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToEdit(skillObject){
+    this.router.navigate(['edit-skill', skillObject.$key]);
   }
 
 }

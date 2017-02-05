@@ -10,6 +10,7 @@ import {AuthGuard} from'./shared/security/auth.guard';
 import {EditUserprofileComponent} from'./edit-userprofile/edit-userprofile.component';
 import { UserResolver } from './shared/model/user.resolver';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { EditSkillComponent } from './edit-skill/edit-skill.component';
 
 export const routerConfig: Route[] = [
   {
@@ -28,6 +29,10 @@ export const routerConfig: Route[] = [
     path: 'community',
     component: CommunitySearchComponent
   },  
+  {
+    path: 'edit-skill/:id',
+    component: EditSkillComponent
+  },
   {
     path: 'new-profile',
     component: CreateUserprofileComponent,

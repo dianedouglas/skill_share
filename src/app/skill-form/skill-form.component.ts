@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -6,17 +6,27 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   templateUrl: './skill-form.component.html',
   styleUrls: ['./skill-form.component.css']
 })
-export class SkillFormComponent implements OnInit {
+export class SkillFormComponent implements OnInit, OnChanges {
 
   form: FormGroup;
+  @Input()
+  initialValue: any;
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  ngOnInit() {
+  constructor(private formBuilder: FormBuilder) { 
     this.form = this.formBuilder.group({
       skill_name: ['', Validators.required],
       description: ['', Validators.required],
     });
+  }
+
+  ngOnInit() {  }
+
+  ngOnChanges(changes:SimpleChanges) {
+    //make sure form is initialized and look for changes to initialValue input property
+    if(this.form && changes['initialValue']) {
+      this.form.patchValue(changes['initialValue'].currentValue)
+    }
+
   }
 
   isErrorVisible(field: string, error:string) {

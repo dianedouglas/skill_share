@@ -31,6 +31,7 @@ import {AuthGuard} from "./shared/security/auth.guard";
 import { EditUserprofileComponent } from './edit-userprofile/edit-userprofile.component';
 import { UserResolver } from './shared/model/user.resolver';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { EditSkillComponent } from './edit-skill/edit-skill.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ViewUserComponent } from './view-user/view-user.component';
     UsersListComponent,
     CommunitySearchComponent,
     EditUserprofileComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    EditSkillComponent
   ],
   imports: [
     BrowserModule,
