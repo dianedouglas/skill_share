@@ -3,7 +3,8 @@ export class User {
       public $key: string,
       public username: string,
       public photo: string,
-      public occupation: string
+      public occupation: string,
+      public location: string
     ){
 
   }
@@ -16,7 +17,8 @@ static fromJsonList(arrayOfUserObservables):User[] {
     $key,
     username,
     photo,
-    occupation}):User {
-  return new User($key, username, photo, occupation);
+    occupation,
+    location}):User {
+  return new User($key, username, photo, occupation, location);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from "../shared/model/user";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'users-list',
@@ -10,9 +11,14 @@ export class UsersListComponent implements OnInit {
   @Input()
   users: User[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToUserDetail(userObject) {
+    console.log(userObject);
+    this.router.navigate(['users', userObject.$key]);
   }
 
 }

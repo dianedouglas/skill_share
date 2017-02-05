@@ -16,5 +16,10 @@
       <input name="occupation" formControlName="occupation">
       <div class="field-error-message" *ngIf="isErrorVisible('occupation', 'required')">Field is required</div>
     </div>
+    <div class="form-field">
+      <label>Location</label>
+      <input name="location" formControlName="location">
+      <div class="field-error-message" *ngIf="isErrorVisible('location', 'required')">Field is required</div>
+    </div>
   </fieldset>
 </form>

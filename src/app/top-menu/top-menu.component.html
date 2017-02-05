@@ -17,6 +17,13 @@
         >Community</a>
       </li>  
       <li>
+        <a  routerLinkActive="active"
+            routerLink='/user-profile'
+            [routerLinkActiveOptions]="{exact:true}"
+            *ngIf="authInfo?.isLoggedIn()"
+        >My Profile</a>
+      </li>  
+      <li>
         <a (click)="logout()" *ngIf="authInfo?.isLoggedIn()">Logout</a>
       </li>
     </ul>

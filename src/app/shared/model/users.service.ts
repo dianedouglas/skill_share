@@ -1,10 +1,10 @@
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
-import { User} from './user';
-import { Skill} from './skill';
+import { User } from './user';
+import { Skill } from './skill';
 import { AngularFire, FirebaseRef,AngularFireDatabase } from 'angularfire2';
 import { Subject } from "rxjs/Rx";
-import {FirebaseListFactoryOpts} from "angularfire2/interfaces";
+import { FirebaseListFactoryOpts } from "angularfire2/interfaces";
 
 @Injectable()
 export class UsersService {
@@ -79,7 +79,7 @@ export class UsersService {
     console.log(userToSave);
     // create new id of lesson by saying:
     // hey sdk create a child in the lessons table
-    // call push method without passing in the data yet to just create the slot. 
+    // call push method without passing in the data yet to just create the slot.
     // call '.key' to get the key property and store it.
     // const newUserKey = this.sdkDb.child('users').push().key;
     const newUserKey = this.sdkDb.child('users').push().key;
@@ -87,7 +87,7 @@ export class UsersService {
     // then we want to save both into lessons and lessonsPerCourse at the same time to make sure they are consistent.
     // create empty object of data to save.
     let dataToSave = {};
-    // add property with URL for each table. 
+    // add property with URL for each table.
     dataToSave["users/" + newUserKey] = userToSave;
     // dataToSave["lessonsPerCourse/" + courseId + "/" + newLessonKey] = true;
     // save into both tables at once. we will need this to edit lessons too, so separate function.
@@ -110,7 +110,7 @@ export class UsersService {
 
 
   firebaseUpdate(dataToSave) {
-    // create rxjs subject so that we can convert it to an observable to return. we want to stay consistent and use observables rather than promises or callbacks. 
+    // create rxjs subject so that we can convert it to an observable to return. we want to stay consistent and use observables rather than promises or callbacks.
     const subject = new Subject();
     this.sdkDb.update(dataToSave)
       .then(
@@ -125,4 +125,9 @@ export class UsersService {
         );
     return subject.asObservable();
   }
+
+  findUserByKey(key){
+    return this.af.database.object('users/' + key);
+  }
+
 }
