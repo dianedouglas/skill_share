@@ -4,6 +4,8 @@ import { User} from './user';
 import { Skill } from './skill';
 import { AngularFire, FirebaseRef } from 'angularfire2';
 import { Subject } from "rxjs/Rx";
+import { Http } from '@angular/http';
+import { firebaseConfig } from "../../../environments/firebase.config";
 
 @Injectable()
 export class SkillsService {
@@ -11,7 +13,7 @@ export class SkillsService {
   sdkDb: any;
   currentUser: any;
 
-  constructor(private af: AngularFire, @Inject(FirebaseRef) fb) {
+  constructor(private af: AngularFire, @Inject(FirebaseRef) fb, private http:Http) {
     this.sdkDb = fb.database().ref();
   }
 
@@ -63,5 +65,14 @@ export class SkillsService {
   }
   findSkillByKey(key){
     return this.af.database.object('skills/' + key);
+  }
+  deleteSkill(key){
+    const url = firebaseConfig.databaseURL + '/lessons/' + key + '.json';
+    return this.http.delete(url);
+  }
+  deleteSkillPerUser(key, userId){
+    console.log(key, userId);
+    const urlSkillPerUser = firebaseConfig.databaseURL + '/skillsPerUser/' + userId + '/' + key + '.json';
+    return this.http.delete(urlSkillPerUser);
   }
 }
