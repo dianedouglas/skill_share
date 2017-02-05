@@ -1,6 +1,11 @@
 <form novalidate [formGroup]="form" id="register">
   <fieldset>
     <legend>Register</legend>
+    <p>Already have an account?
+      <a routerLinkActive="active"
+         routerLink="/login"
+     >Login</a>
+    </p>
     <div class="form-fields">
       <div class="form-field">
         <label>Email:</label>
