@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/security/auth.service';
 import { AuthInfo } from '../shared/model/auth-info';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'top-menu',
@@ -11,7 +12,7 @@ export class TopMenuComponent implements OnInit {
 
   authInfo: AuthInfo;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router:Router) { }
 
   ngOnInit() {
     this.authService.authInfo$.subscribe(
@@ -23,6 +24,7 @@ export class TopMenuComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+    this.router.navigate(['/home']);
   }
 
 }
