@@ -1,0 +1,21 @@
+.list-group-item {
+  min-height: 200px;
+}
+
+label {
+  font-size: 1.0em;
+  font-weight: bold;
+}
+
+label.location {
+  float: right;
+}
+
+img {
+  width: 140px;
+  height: 140px;
+}
+
+img:hover {
+  cursor: pointer;
+}
