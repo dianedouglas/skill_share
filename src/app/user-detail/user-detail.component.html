@@ -1,9 +1,22 @@
-<p>Username: {{currentUser?.username}}</p>
-<p>Occupation: {{currentUser?.occupation}}</p>
-<p>Email: {{currentUser?.email}}</p>
-<p>Location: {{currentUser?.location}}</p>
-<skills-list [skills]="skills$ | async"></skills-list>
-<img src="{{currentUser?.photo}}" alt="image-of-user">
-<br>
-<a routerLink="/add-skill">Add Skill</a>
-<button routerLink="edit">Edit Profile</button>
+<section class="row">
+  <header class="col-xs-12">
+    <h2>Welcome, {{currentUser?.username}}!</h2>
+    <hr>
+    <button class="btn btn-sm" routerLink="edit">Edit Profile</button>
+  </header>
+
+  <section class="col-sm-6 photo">
+    <label>Profile Image</label><br><img src="{{currentUser?.photo}}" alt="image-of-user">
+  </section>
+  <section class="col-sm-6">
+    <label>Username </label><p>{{currentUser?.username}}</p>
+    <label>Occupation </label><p>{{currentUser?.occupation}}</p>
+    <label>Email </label><p>{{currentUser?.email}}</p>
+    <label>Location </label><p>{{currentUser?.location}}</p>
+  </section>
+</section>
+<hr>
+<section>
+  <skills-list [skills]="skills$ | async"></skills-list>
+  <br>
+</section>

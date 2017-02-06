@@ -1,8 +1,11 @@
-<h2>All Skills</h2>
-<ul *ngFor="let skill of skills">
-  <h3>Skill name</h3>
-<p>{{skill.skill_name}}</p>
-  <h3>Description</h3>
-<p> {{skill.description}}</p>
-<button (click)="goToEdit(skill)">Edit Skill</button>
+<header>
+  <h2>Current Skills</h2>
+</header>
+<ul class="list-group" *ngFor="let skill of skills">
+  <li class="list-group-item">
+    <button class="btn btn-sm edit"(click)="goToEdit(skill)">Edit</button>
+    <label>Skill: </label><p>{{skill.skill_name}}</p>
+    <label>Description</label><p> {{skill.description}}</p>
+  </li>
 </ul>
+<button class="btn btn-lg add" routerLink="/add-skill">Add Skill</button>
