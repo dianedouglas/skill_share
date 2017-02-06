@@ -1,0 +1,26 @@
+header {
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.col-sm-6.photo {
+  width: auto;
+}
+
+button.btn {
+  color: #f7f5f4;
+  background-color: #4EC5C1;
+  float: right;
+}
+
+button.btn:hover {
+  cursor: pointer;
+}

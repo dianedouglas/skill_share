@@ -1,0 +1,37 @@
+/* ------------------------- Nav Styles -------------------------- */
+
+@font-face {
+  font-family: 'brand';
+  src: url('./assets/fonts/Destrukt.ttf')
+}
+
+.navbar {
+  position: relative;
+  border-radius: 0px;
+  border-style: none;
+  height: 50px;
+}
+
+.navbar-toggle {
+  border-color: #f7f5f4;
+}
+
+#brand.navbar-brand {
+  text-decoration: none;
+  font-size: 35px;
+  font-family: 'brand', sans-serif;
+  color: #f7f5f4;
+}
+
+#logout {
+  cursor: pointer;
+}
+
+.navbar-nav>li>a {
+  color: #f7f5f4;
+  font-weight: bold;
+}
+
+.navbar-nav>li>a:hover {
+  color: #E5E338;
+}

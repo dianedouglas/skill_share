@@ -1,8 +1,21 @@
-<ul *ngFor="let user of users">
-  <p *ngIf="user">Username: {{user?.username}}</p>
-  <p *ngIf="user">Occupation: {{user?.occupation}}</p>
-  <p *ngIf="user">Email: {{user?.email}}</p>
-  <p *ngIf="user">Location: {{user?.location}}</p>
-  <img height="100" width="100" src="{{user.photo}}" alt="image-of-user">
-  <button (click)=goToUserDetail(user)>Go to user</button>
+<ul class="list-group" *ngFor="let user of users">
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col-xs-6">
+        <label *ngIf="user">{{user?.username}}</label>
+      </div>
+      <div class="col-xs-6">
+        <label class="location" *ngIf="user">{{user?.location}}</label>
+      </div>
+    </div>
+      <div class="row">
+        <div class="image">
+          <img (click)=goToUserDetail(user) class="img-circle" src="{{user.photo}}" alt="image-of-user">
+        </div>
+        <div class="occupation">
+          <label *ngIf="user">Occupation:</label><p>{{user?.occupation}}</p>
+        </div>
+      </div>
+
+  </li>
 </ul>

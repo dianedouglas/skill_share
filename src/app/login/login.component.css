@@ -1,29 +1,38 @@
-.child-page-title {
-  font-size: 2em;
-  text-align: center;
-}
-
-.form-control {
-  margin: 5px;
-  max-width: 375px;
+fieldset {
+  width: 250px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.col-xs-12 h4 {
+form#login {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}
+
+form legend {
+  font-size: 1.5em;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 5px;
 }
 
-.button-container {
-  text-align: center;
-  margin: 10px;
+form label {
+  width: 100%;
+  text-align: left;
 }
 
-button.new-account {
-  background-color: #4EC5C1;
-  color: #FFF;
+form input {
+  width: 100%;
 }
 
-button.new-account:hover {
-  color: #E5E338;
+form button.btn {
+  float: right;
+  color: #f7f5f4;
+  background-color: #4EC5C1
+}
+
+form button.btn:hover {
+  cursor: pointer;
 }

@@ -1,0 +1,26 @@
+header {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+button.btn {
+  color: #f7f5f4;
+  background-color: #4EC5C1;
+}
+
+button.btn:hover {
+  cursor: pointer;
+}
+
+button.btn.btn-sm.edit {
+  float: right;
+}
+
+button.btn.btn-lg.add {
+  float: right;
+  margin-bottom: 15px;
+}

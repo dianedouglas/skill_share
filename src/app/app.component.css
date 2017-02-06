@@ -2,47 +2,14 @@
   margin-bottom: 45px;
 }
 
-/* ------------------------- Nav Styles -------------------------- */
-
-@font-face {
-  font-family: 'brand';
-  src: url('./assets/fonts/Destrukt.ttf')
-}
-
-.navbar {
-  border-style: none;
-  border-radius: 0px;
-  background-color: #4EC5C1;
-}
-
-.navbar-toggle {
-  border-color: #f7f5f4;
-}
-
-#brand.navbar-brand {
-  text-decoration: none;
-  font-size: 35px;
-  font-family: 'brand', sans-serif;
-  color: #f7f5f4;
-}
-
-.navbar-nav>li>a {
-  color: #f7f5f4;
-}
-
-.navbar-nav>li>a:hover {
-  color: #E5E338;
-}
-
 
 /* ----------------------------- Footer Styles ------------------------------ */
-
 
 footer {
    position: fixed;
    left: 0px;
    bottom: 0px;
-   height: 40px;
+   height: 30px;
    width: 100%;
    background: #4EC5C1;
 }
@@ -50,5 +17,5 @@ footer {
 #footer-text {
   color: #f7f5f4;
   text-align: center;
-  padding-top: 9px;
+  padding-top: 3px;
 }

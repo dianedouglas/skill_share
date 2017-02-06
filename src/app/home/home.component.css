@@ -3,57 +3,53 @@
   src: url('./assets/fonts/Destrukt.ttf')
 }
 
-#main-page-brand {
-  font-size: 50px;
+.main {
+  margin-top: 80px;
+  text-align: center;
+}
+
+img {
+  width: 85px;
+  padding-bottom: 35px;
+}
+
+header {
+  font-size: 4.0em;
+  padding: 5px;
   font-family: 'brand', sans-serif;
-  color: #f7f5f4;;
+  color: #4EC5C1;
   text-align: center;
 }
 
-.jumbotron {
-  background-color: #4EC5C1;
-}
-
-@media (min-width: 768px) {
-  .jumbotron {
-    width: 740px;
-    margin-left: auto;
-    margin-right: auto;
+@media (max-width: 360px) {
+  header {
+    font-size: 3.0em;
   }
 }
 
-#phrase {
+#tagline {
+  margin: 20px;
+  padding: 10px;
   text-align: center;
-  font-size: 1.5em;
-  color: #f7f5f4;
+  font-size: 1.0em;
+  color: #4EC5C1;
 }
 
-#home-page-btn-row {
-  margin-top: 25px;
+section#buttons {
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 25px;
 }
 
-.btn.user {
-  width: 80%;
-  height: 50px;
-  margin-right: 10%;
-  margin-left: 10%;
-  color: #000;
-  font-size: 1.2em;
-  background-color: #DBF3F2;
-  border-color: #FFFFFF;
+section#buttons button.btn {
+  color: #4EC5C1;
+  background-color: #f7f5f4;
+  border-style: solid;
+  border-color: #4EC5C1;
 }
 
-.row.skills-row {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .row.skills-row  {
-    width: 740px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+section#buttons button.btn:hover {
+  cursor: pointer;
+  background-color: #e2f5f5;
 }

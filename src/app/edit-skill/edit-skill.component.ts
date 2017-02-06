@@ -44,7 +44,7 @@ export class EditSkillComponent implements OnInit {
     this.skillsService.deleteSkill(this.currentSkill.$key)
       .subscribe(
           () => {
-            alert('yo i am deleted son!');
+            alert('The selected skill has been deleted!');
           },
           console.error
         );
@@ -53,7 +53,7 @@ export class EditSkillComponent implements OnInit {
     this.skillsService.deleteSkillPerUser(this.currentSkill.$key, this.currentSkill.userId)
       .subscribe(
           () => {
-            alert('yo i am also deleted son!');
+            alert('The selected skill has been deleted!');
             this.router.navigate(['/home']);
           },
           console.error

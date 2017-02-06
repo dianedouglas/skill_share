@@ -1,20 +1,26 @@
-<form novalidate [formGroup]="form">
-
+<form novalidate [formGroup]="form" id="register">
   <fieldset>
     <legend>Register</legend>
-    <div class="form-field">
-      <label>Email:</label>
-      <input name="email" formControlName="email">
+    <p>Already have an account?
+      <a routerLinkActive="active"
+         routerLink="/login"
+     >Login</a>
+    </p>
+    <div class="form-fields">
+      <div class="form-field">
+        <label>Email:</label>
+        <input name="email" formControlName="email">
+      </div>
+       <div class="form-field">
+        <label>Password:</label>
+        <input name="password" formControlName="password" type="password">
+      </div>
+       <div class="form-field">
+        <label>Password Confirm:</label>
+        <input name="confirm" formControlName="confirm" type="password">
+      </div>
     </div>
-     <div class="form-field">
-      <label>Password:</label>
-      <input name="password" formControlName="password" type="password">
-    </div>
-     <div class="form-field">
-      <label>Confirm Password:</label>
-      <input name="confirm" formControlName="confirm" type="password">
-    </div>
+    <!-- disable register button if passwords do not match -->
+    <button class="btn" (click)="register()" [disabled]="!isPasswordMatch()">Register</button>
   </fieldset>
-  <!-- disable register button if passwords do not match -->
-  <button (click)="register()" [disabled]="!isPasswordMatch()">Register</button>
 </form>

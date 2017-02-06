@@ -12,10 +12,10 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb:FormBuilder, private authService:AuthService, private router:Router) { 
+  constructor(private fb:FormBuilder, private authService:AuthService, private router:Router) {
     this.form = this.fb.group({
-      email: ['Enter Email', Validators.required],
-      password: ['Enter Password', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           alert('there was an error');
         }
     );
-    
+
   }
 
 }

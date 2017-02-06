@@ -1,0 +1,21 @@
+header {
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.col-sm-6.photo {
+  width: auto;
+}
+
+img {
+  width: 300px;
+  height: auto;
+}

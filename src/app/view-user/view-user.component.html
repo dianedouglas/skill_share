@@ -1,4 +1,15 @@
-  <p>Username: {{currentUser?.username}}</p>
-  <p>Occupation: {{currentUser?.occupation}}</p>
-  <p>Email: {{currentUser?.email}}</p>
-  <img height="100" width="100" src="{{currentUser?.photo}}" alt="image-of-user">
+<section class="row">
+  <header class="col-xs-12">
+    <h2>{{currentUser?.username}}</h2>
+    <hr>
+  </header>
+  <section class="col-sm-6 photo">
+    <img class="img-responsive img-thumbnail" src="{{currentUser?.photo}}" alt="image-of-user">
+  </section>
+  <section class="col-sm-6">
+    <label>Username </label><p>{{currentUser?.username}}</p>
+    <label>Occupation </label><p>{{currentUser?.occupation}}</p>
+    <label>Email </label><p>{{currentUser?.email}}</p>
+    <label>Location </label><p>{{currentUser?.location}}</p>
+  </section>
+</section>

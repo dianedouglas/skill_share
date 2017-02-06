@@ -1,17 +1,22 @@
-<p class="child-page-title"><b>New to SkillSwap?</b><br>Sign up</p>
-
-<form novalidate [formGroup]="form">
-  <div class="row">
-    <div class="col-xs-12">
-        <div id="user_creds" class="form-group">
-         <input name="email" formControlName="email" type="email" class="form-control" aria-describedby="emailHelp">
-         <input name="password" formControlName="password" type="password" class="form-control">
-       </div>
-     </div>
-   </div>
-
-  <div class="button-container">
-    <button class="btn btn-lg new-account" (click)="signin()">Login</button>
-  </div>
-
+<form novalidate [formGroup]="form" id="login">
+  <fieldset>
+    <legend>User Login</legend>
+    <p>Don't have an account?
+      <a routerLinkActive="active"
+         routerLink="/register"
+         *ngIf="!authInfo?.isLoggedIn()"
+     >Sign Up</a>
+    </p>
+    <div class="form-fields">
+      <div class="form-field">
+        <label>Email:</label>
+         <input name="email" formControlName="email" type="email" class="form-control" placeholder="Email" aria-describedby="emailHelp">
+      </div>
+      <div class="form-field">
+         <label>Password:</label>
+         <input name="password" formControlName="password" type="password" class="form-control" placeholder="Password">
+      </div>
+    </div>
+     <button class="btn" (click)="signin()">Login</button>
+   </fieldset>
 </form>

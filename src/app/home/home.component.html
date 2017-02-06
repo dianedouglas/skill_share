@@ -1,20 +1,21 @@
 <!-- <skills-list [skills]=skillsProperty></skills-list> -->
 
-<div class="jumbotron">
-  <p id="main-page-brand">Skill Swap</p>
-  <p id="phrase">A platform for sharing and learning.</p>
-  <div id="home-page-btn-row" class="row">
+<div class="main">
+  <img src="./assets/images/shuffle_blue.png" alt="shuffle symbol">
+  <header>Skill Swap</header>
+  <h3 id="tagline">A social platform for <br>sharing & learning skills</h3>
+  <section id="buttons">
     <div class="col-xs-6">
        <a routerLinkActive="active"
           routerLink="/register"
           *ngIf="!authInfo?.isLoggedIn()"
-      ><button class="btn user">Sign Up</button></a>
+      ><button class="btn">Sign Up</button></a>
     </div>
     <div class="col-xs-6">
        <a routerLinkActive="active"
           routerLink="/login"
           *ngIf="!authInfo?.isLoggedIn()"
-      ><button class="btn user">Log in</button></a>
+      ><button class="btn">Log in</button></a>
     </div>
-  </div>
+  </section>
 </div>
