@@ -24,6 +24,7 @@
 
 .navbar-nav>li>a {
   color: #f7f5f4;
+  font-weight: bold;
 }
 
 .navbar-nav>li>a:hover {

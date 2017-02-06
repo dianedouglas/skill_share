@@ -13,6 +13,10 @@ body {
   src: url('./assets/fonts/Destrukt.ttf')
 }
 
+a:active {
+  color: #E5E338;
+}
+
 /* ------------------------------ Form Styles ------------------------------- */
 
 section.top {
