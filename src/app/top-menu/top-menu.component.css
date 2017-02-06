@@ -7,8 +7,8 @@
 
 .navbar {
   position: relative;
-  height: 20px;
   border-radius: 0px;
+  height: 52px;
 }
 
 .navbar-toggle {
@@ -20,6 +20,10 @@
   font-size: 35px;
   font-family: 'brand', sans-serif;
   color: #f7f5f4;
+}
+
+#logout {
+  cursor: pointer;
 }
 
 .navbar-nav>li>a {

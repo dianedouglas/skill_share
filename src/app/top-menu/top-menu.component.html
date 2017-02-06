@@ -1,31 +1,43 @@
 <nav class="navbar navbar-inverse">
-  <div class="navbar-header">
-    <a routerLink=""><div id="brand" class="navbar-brand">SS</div></a>
-  </div>
-  <div class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li>
-        <a  routerLinkActive="active"
-            routerLink="home"
-            [routerLinkActiveOptions]="{exact:true}"
-        >Home</a>
-      </li>
-      <li>
-        <a  routerLinkActive="active"
-            routerLink="community"
-            [routerLinkActiveOptions]="{exact:true}"
-        >Community</a>
-      </li>
-      <li>
-        <a  routerLinkActive="active"
-            routerLink='/user-profile'
-            [routerLinkActiveOptions]="{exact:true}"
-            *ngIf="authInfo?.isLoggedIn()"
-        >My Profile</a>
-      </li>
-      <li>
-        <a (click)="logout()" *ngIf="authInfo?.isLoggedIn()">Logout</a>
-      </li>
-    </ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a routerLink="home"><div id="brand" class="navbar-brand">SS</div></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a  routerLinkActive="active"
+              routerLink="home"
+              [routerLinkActiveOptions]="{exact:true}"
+          >Home</a>
+        </li>
+        <li>
+          <a  routerLinkActive="active"
+              routerLink="community"
+              [routerLinkActiveOptions]="{exact:true}"
+          >Community</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a  routerLinkActive="active"
+              routerLink='/user-profile'
+              [routerLinkActiveOptions]="{exact:true}"
+              *ngIf="authInfo?.isLoggedIn()"><span class="glyphicon glyphicon-user"></span> My Profile</a>
+        </li>
+        <li>
+          <a  id="logout"
+              (click)="logout()"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}"
+              *ngIf="authInfo?.isLoggedIn()"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
