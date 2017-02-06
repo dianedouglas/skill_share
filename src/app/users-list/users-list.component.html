@@ -9,10 +9,10 @@
       </div>
     </div>
       <div class="row">
-        <div class="col-xs-6">
+        <div class="image">
           <img (click)=goToUserDetail(user) class="img-circle" src="{{user.photo}}" alt="image-of-user">
         </div>
-        <div class="col-xs-6 occupation">
+        <div class="occupation">
           <label *ngIf="user">Occupation:</label><p>{{user?.occupation}}</p>
         </div>
       </div>

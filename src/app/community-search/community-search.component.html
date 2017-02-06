@@ -2,9 +2,11 @@
   <h2>Community</h2>
   <hr>
 </header>
-<label>Search By Location:</label>
-<p><input (keyup)=searchByLocation(userLocation.value) placeholder="Location" #userLocation></p>
-<label>Search By Skill:</label>
-<p><input (keyup)=searchBySkill(skillInput.value) placeholder="Skill Name" #skillInput></p>
+<section>
+  <label>Search By Location:</label>
+  <p><input (keyup)=searchByLocation(userLocation.value) placeholder="Location" #userLocation></p>
+  <label>Search By Skill:</label>
+  <p><input (keyup)=searchBySkill(skillInput.value) placeholder="Skill Name" #skillInput></p>
+</section>  
 <hr>
 <users-list [users]=filteredUsers></users-list>

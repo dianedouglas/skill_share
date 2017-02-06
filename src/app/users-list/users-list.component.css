@@ -11,6 +11,17 @@ label.location {
   float: right;
 }
 
+.image {
+  width: 140px;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.occupation {
+  display: inline-block;
+  margin: 15px;
+}
+
 img {
   width: 140px;
   height: 140px;
