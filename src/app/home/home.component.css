@@ -3,26 +3,36 @@
   src: url('./assets/fonts/Destrukt.ttf')
 }
 
-header {
-  font-size: 3.0em;
-  padding: 5px;
-  font-family: 'brand', sans-serif;
-  color: #f7f5f4;
+.main {
+  margin-top: 80px;
   text-align: center;
 }
 
-.jumbotron {
-  background-color: #4EC5C1;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+img {
+  width: 85px;
+  padding-bottom: 35px;
+}
+
+header {
+  font-size: 4.0em;
+  padding: 5px;
+  font-family: 'brand', sans-serif;
+  color: #4EC5C1;
+  text-align: center;
+}
+
+@media (max-width: 360px) {
+  header {
+    font-size: 3.0em;
+  }
 }
 
 #tagline {
-  margin: 15px;
+  margin: 20px;
+  padding: 10px;
   text-align: center;
   font-size: 1.0em;
-  color: #f7f5f4;
+  color: #4EC5C1;
 }
 
 section#buttons {
@@ -35,8 +45,11 @@ section#buttons {
 section#buttons button.btn {
   color: #4EC5C1;
   background-color: #f7f5f4;
+  border-style: solid;
+  border-color: #4EC5C1;
 }
 
 section#buttons button.btn:hover {
   cursor: pointer;
+  background-color: #e2f5f5;
 }

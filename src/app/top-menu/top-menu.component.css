@@ -8,7 +8,8 @@
 .navbar {
   position: relative;
   border-radius: 0px;
-  height: 52px;
+  border-style: none;
+  height: 50px;
 }
 
 .navbar-toggle {
