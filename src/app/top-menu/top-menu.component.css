@@ -9,7 +9,7 @@
   position: relative;
   border-radius: 0px;
   border-style: none;
-  height: 50px;
+  /*height: 50px;*/
 }
 
 .navbar-toggle {
@@ -21,6 +21,10 @@
   font-size: 35px;
   font-family: 'brand', sans-serif;
   color: #f7f5f4;
+}
+
+.navbar-brand {
+  float: none;
 }
 
 #logout {
@@ -35,3 +39,11 @@
 .navbar-nav>li>a:hover {
   color: #E5E338;
 }
+/*
+.navbar-collapse {
+  border: none;
+}
+
+.navbar-collapse li {
+  display: inline-block;
+}*/

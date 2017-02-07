@@ -1,5 +1,9 @@
 .list-group-item {
   min-height: 200px;
+  min-width: 290px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 label {
@@ -9,6 +13,12 @@ label {
 
 label.location {
   float: right;
+}
+
+@media (max-width: 700px) {
+  label {
+    font-size: 0.90em;
+  }
 }
 
 .image {
