@@ -24,3 +24,9 @@ button.btn {
 button.btn:hover {
   cursor: pointer;
 }
+
+.img-thumbnail {
+  width: 100%;
+  max-width: 290px;
+  height: auto;
+}
