@@ -24,7 +24,6 @@ export class CreateUserprofileComponent implements OnInit {
    this.usersService.createNewUser(form.value, this.email)
       .subscribe( //returns observable which we subscribe to.
         () => {
-          alert('user saved');
           form.reset();
           this.router.navigateByUrl('user-profile');
         },

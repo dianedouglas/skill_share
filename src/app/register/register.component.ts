@@ -37,7 +37,6 @@ export class RegisterComponent {
     this.authService.signUp(formData.email, formData.password)
       .subscribe(
         () => {
-          alert('user created!'); //confirm message and then to /home.
           this.router.navigateByUrl('/new-profile');
         },
         err => alert(err) //otherwise show error.

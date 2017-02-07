@@ -31,7 +31,6 @@ saveSkill(form){
   this.skillsService.createNewSkill(form.value, this.userId)
     .subscribe(
       () => {
-          alert('skill saved');
           form.reset();
           this.router.navigateByUrl('user-profile');
        },
