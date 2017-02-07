@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
 import { UsersService } from '../shared/model/users.service';
+import { Observable } from 'rxjs/Rx';
+import { Skill} from '../shared/model/skill';
+
 @Component({
   selector: 'app-view-user',
   templateUrl: './view-user.component.html',
@@ -10,6 +13,7 @@ export class ViewUserComponent implements OnInit {
 
   id: any;
   currentUser;
+  skills$: Observable<Skill[]>;
 
   constructor(private router: Router,  private route:ActivatedRoute, private usersService: UsersService) { }
 
@@ -23,6 +27,7 @@ export class ViewUserComponent implements OnInit {
           }
         );
     });
+    this.skills$ = this.usersService.findSkillsForUser(this.currentUser.email);
   }
 
 }

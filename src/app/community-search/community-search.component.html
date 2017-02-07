@@ -9,7 +9,18 @@
   </div>
   <div class="search-group-item">
     <label>Search By Skill:</label>
-    <p><input (keyup)=searchBySkill(skillInput.value) placeholder="Skill Name" #skillInput></p>
+    <!-- <p><input (keyup)=searchBySkill(skillInput.value) placeholder="Skill Name" #skillInput></p> -->
+    <select (change)=searchBySkill(skillInput.value) #skillInput>
+      <option value="Computer Programming">Computer Programming</option>
+      <option value="Music">Music</option>
+      <option value="Art">Art</option>
+      <option value="Video Games">Video Games</option>
+      <option value="Sports">Sports</option>
+      <option value="Fitness and Health">Fitness and Health</option>
+      <option value="Science">Science</option>
+      <option value="Writing">Writing</option>
+      <option value="Food and Drink">Food and Drink</option>
+    </select>
   </div>
 </section>
 <hr>

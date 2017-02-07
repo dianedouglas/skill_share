@@ -13,3 +13,13 @@
     <label>Location </label><p>{{currentUser?.location}}</p>
   </section>
 </section>
+<section class="row">
+  <section class="col-sm-12">
+    <ul class="list-group" *ngFor="let skill of skills$ | async">
+      <li class="list-group-item">
+        <label>Skill </label><p>{{skill.skill_name}}</p>
+        <label>Description</label><p> {{skill.description}}</p>
+      </li>
+    </ul>
+  </section>
+</section>
