@@ -4,14 +4,20 @@
 
 ![screenshot of project main page](src/assets/images/web-app.png)
 
+### _Contributors:_
+
+* [Lisa MacCarrigan](https://github.com/LisaMacCarrigan)
+* [Meredith Alcorn](https://github.com/mmalcorn)
+* [Diane Douglas](https://www.linkedin.com/in/douglasdiane)
+
 ## Description
 
-A social networking app built to let users find each other based on shared skills, or a shared desire to learn a particular skill such as yoga, basketweaving or a particular programming language. It was created in Angular 2 using a Firebase database.
+A social networking app built to let users find each other based on shared interest in certain skills, such as musical instruments or a particular programming language. It was created in Angular 2 using a Firebase database.
 
 It features:
 
 * User Authentication with Firebase
-* The ability to search for users based on a skill or a username
+* The ability to search for users based on a skill or their location
 * A Many-to-Many relationship between users and skills
 * User profile page to display each user's username, email, occupation, photo and skills.
 
@@ -29,22 +35,15 @@ To load this site locally (Mac):
 
 There you can click Community to view existing users and search by skill name or user name. Or you can sign up for an account, create your own user profile and add skills to it describing your level of experience with each one.
 
-## Known Issues
-
-This app is still in development. Remaining features to be added to the MVP:
-
-* Ability to edit and delete users and skills
-* Store user location data and allow searching for users within a given proximity to you
-* Store login status in a session cookie and block off certain pages to unauthenticated users.
-* Finalize front-end styling
-
 ## Support and contact details
 
 Please feel free to fork this repository and submit pull requests back. You can also contact me here:
 
-* Email: diane.douglas1@gmail.com
+* Email: diane@melodiccode.com
 * My Website: [www.MelodicCode.com](http://www.melodiccode.com)
 
 ## Technologies Used
 
 * Angular2
+* Firebase
+* TypeScript
